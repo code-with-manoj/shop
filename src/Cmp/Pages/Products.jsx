@@ -26,34 +26,37 @@ const Products = () => {
   //   }, []);
   return (
     <>
-      <section class="text-gray-600 body-font">
-        <div class="container px-5 py-8 mx-auto">
-          <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-8 mx-auto">
+          <h1 className="text-3xl font-medium title-font text-gray-900 mb-12 text-center">
             Our Products
           </h1>
-          <div class="flex flex-wrap -m-4">
+          <div className="flex flex-wrap -m-4">
             {demo?.map((e, i) => {
               return (
                 <div
                   key={i}
-                  onClick={() => navigate("/product", { state: e })}
-                  class="lg:w-1/4 md:w-1/2 p-4 w-full"
+                  onClick={() => {
+                    navigate("/product", { state: e });
+                    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                  }}
+                  className="lg:w-1/4 md:w-1/2 p-4 w-full"
                 >
-                  <a class="block relative h-48 rounded overflow-hidden">
+                  <a className="block relative h-48 rounded overflow-hidden">
                     <img
                       alt="ecommerce"
-                      class="object-cover object-center w-full h-full block"
+                      className="object-cover object-center w-full h-full block"
                       src={e.img}
                     />
                   </a>
-                  <div class="mt-4">
-                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                  <div className="mt-4">
+                    <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
                       CATEGORY
                     </h3>
-                    <h2 class="text-gray-900 title-font text-lg font-medium">
+                    <h2 className="text-gray-900 title-font text-lg font-medium">
                       The Catalyzer
                     </h2>
-                    <p class="mt-1">$16.00</p>
+                    <p className="mt-1">$16.00</p>
                   </div>
                 </div>
               );
