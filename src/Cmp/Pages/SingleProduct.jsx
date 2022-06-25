@@ -1,11 +1,15 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { MdKeyboardBackspace } from "react-icons/md";
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../../Redux/Actions";
 
 const SingleProduct = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const single = location.state;
+  // const select = useSelector((e) => e.Cart);
+  const dispatch = useDispatch();
   return (
     <>
       <section className="text-gray-600 body-font overflow-hidden">
@@ -101,7 +105,7 @@ const SingleProduct = () => {
                 pour-over, neutra jean shorts keytar banjo tattooed umami
                 cardigan.
               </p>
-              <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
+              {/* <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                 <div className="flex">
                   <span className="mr-3">Color</span>
                   <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
@@ -132,12 +136,15 @@ const SingleProduct = () => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="flex">
                 <span className="title-font font-medium text-2xl text-gray-900">
                   $58.00
                 </span>
-                <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                <button
+                  onClick={() => dispatch(addToCart())}
+                  className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
+                >
                   Add To Cart
                 </button>
                 <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">

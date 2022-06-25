@@ -34,21 +34,20 @@ const Products = () => {
           <div className="flex flex-wrap -m-4">
             {demo?.map((e, i) => {
               return (
-                <div
-                  key={i}
-                  onClick={() => {
-                    navigate("/product", { state: e });
-                    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-                  }}
-                  className="lg:w-1/4 md:w-1/2 p-4 w-full"
-                >
-                  <a className="block relative h-48 rounded overflow-hidden">
+                <div key={i} className="lg:w-1/4 md:w-1/2 p-4 w-full">
+                  <div
+                    onClick={() => {
+                      navigate("/product", { state: e });
+                      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                    }}
+                    className="block relative h-48 rounded overflow-hidden"
+                  >
                     <img
                       alt="ecommerce"
                       className="object-cover object-center w-full h-full block"
                       src={e.img}
                     />
-                  </a>
+                  </div>
                   <div className="mt-4">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
                       CATEGORY
