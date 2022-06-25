@@ -7,6 +7,7 @@ import Signup from "./Cmp/Pages/Signup";
 import Login from "./Cmp/Pages/Login";
 import SingleProduct from "./Cmp/Pages/SingleProduct";
 import Cart from "./Cmp/Pages/Cart";
+import Products from "./Cmp/Pages/Products";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/product" element={<SingleProduct />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />

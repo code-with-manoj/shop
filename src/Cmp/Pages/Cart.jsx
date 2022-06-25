@@ -50,7 +50,7 @@ const Cart = () => {
                   Blue bottle crucifix vinyl post-ironic four dollar toast vegan
                   taxidermy. Gastropub indxgo juice poutine.
                 </p>
-                <div className="mt-1 flex justify-between">
+                <div className="mt-3 flex justify-between">
                   <p class="">$20.00</p>
                   <p class="">
                     Total <span className="text-blue-400"> ${select * 16}</span>
